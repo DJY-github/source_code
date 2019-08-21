@@ -21,16 +21,16 @@ extern "C"
 
 /* The cJSON structure: */
 typedef struct cJSON {
-	struct cJSON *next,*prev;	/* next/prev allow you to walk array/object chains. Alternatively, use GetArraySize/GetArrayItem/GetObjectItem */
-	struct cJSON *child;		/* An array or object item will have a child pointer pointing to a chain of the items in the array/object. */
+	struct cJSON *next,*prev;	/* next/prev允许您遍历数组/对象链。或者，使用GetArraySize/GetArrayItem/GetObjectItem */
+	struct cJSON *child;		/* 数组或对象项 有一个子指针指向  数组/对象 中的一系列项。 */
 
-	int type;					/* The type of the item, as above. */
+	int type;					/* 项目的类型，如上所述. */
 
-	char *valuestring;			/* The item's string, if type==cJSON_String */
-	int valueint;				/* The item's number, if type==cJSON_Number */
-	double valuedouble;			/* The item's number, if type==cJSON_Number */
+	char *valuestring;			/*如果type==cjson_string 值表示字符串 */
+	int valueint;				/* 如果type==cJSON_Number 值表示数字 */
+	double valuedouble;			/* 如果type==cJSON_Number 值表示精度值*/
 
-	char *string;				/* The item's name string, if this item is the child of, or is in the list of subitems of an object. */
+	char *string;				/* 如果此项是对象子项的子项或在对象子项列表中，则为该项的名称字符串。 */
 } cJSON;
 
 //json钩子函数
